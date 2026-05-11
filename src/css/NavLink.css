@@ -1,0 +1,79 @@
+.nav-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 32px;
+  border-top: 1px solid #f0f0f0;
+  box-sizing: border-box;
+}
+
+/* ── each link wrapper ── */
+.nav-item {
+  position: relative; /* dropdown anchors to this */
+}
+
+/* ── the link text ── */
+.nav-link {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 60px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  text-decoration: none; /* removes underline */
+  color: #111; /* removes purple */
+  padding: 4px 0;
+  position: relative;
+  transition: color 0.2s;
+}
+
+.nav-link:hover {
+  color: #555;
+}
+
+/* animated underline */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #111;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── dropdown box ── */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #ffffff;
+  border: 1px solid #e5e5e5;
+  min-width: 180px;
+  z-index: 200;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ── each item inside dropdown ── */
+.dropdown-item {
+  display: block; /* ← THIS is what was causing squishing */
+  padding: 10px 16px; /* ← space around each item */
+  font-size: 12px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: #444;
+  transition: color 0.15s;
+  white-space: nowrap; /* stops text wrapping */
+}
+
+.dropdown-item:hover {
+  background: #f7f7f7;
+  color: #111;
+}
