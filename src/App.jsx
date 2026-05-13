@@ -3,6 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import NavLink from "./components/NavLink";
 import Foot from "./components/Foot";
+import Card from "./components/ClothCard";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <NavBar />
       <NavLink />
       <main className="app-main">
+        <Card />
         <Routes></Routes>
       </main>
       <Foot />
