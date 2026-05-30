@@ -1,21 +1,24 @@
 import { Smile, Zap, Rocket } from "lucide-react";
-import { Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import NavLink from "./components/NavLink";
 import Foot from "./components/Foot";
-import Card from "./components/ClothCard";
+import Home from "./pages/Home";
 
 function App() {
   return (
-    <div className="app-layout">
-      <NavBar />
-      <NavLink />
-      <main className="app-main">
-        <Card />
-        <Routes></Routes>
-      </main>
-      <Foot />
-    </div>
+    <BrowserRouter>
+      <div className="app-layout">
+        <NavBar />
+        <NavLink />
+        <main className="app-main">
+          <Routes>
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </main>
+        <Foot />
+      </div>
+    </BrowserRouter>
   );
 }
 
